@@ -1,0 +1,98 @@
+$primary-color: #007bff;
+$secondary-color: #28a745;
+$danger-color: #dc3545;
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  .todo-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    input {
+      padding: 10px;
+      font-size: 1.2rem;
+      width: 300px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    width: 400px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      &.completed {
+        text-decoration: line-through;
+        color: #999;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+
+        button {
+          padding: 5px 10px;
+          font-size: 0.9rem;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:first-child {
+            background-color: $secondary-color;
+            color: white;
+
+            &:hover {
+              background-color: darken($secondary-color, 10%);
+            }
+          }
+
+          &:nth-child(2) {
+            background-color: $danger-color;
+            color: white;
+
+            &:hover {
+              background-color: darken($danger-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
